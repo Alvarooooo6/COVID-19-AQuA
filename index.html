@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en"
+
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  
+<head>
+  <meta charset="utf-8">
+  <title>COVID19/AQuA</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="app/icon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/img/urku-ico.svg">
+  <link rel="stylesheet" href="assets/css/aurora-pack.min.css">
+  <link rel="stylesheet" href="assets/css/aurora-theme-base.min.css">
+  <link rel="stylesheet" href="assets/css/urku.css">
+  <!-- CSS only -->
+
+
+<style>
+  body{
+    background: #fff;
+    margin: 0;
+  }
+  .bot{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 10px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 1px solid #fff;
+  }
+  a{color: white;}
+  .map{
+    width: 50vw;
+    height: 30vw;
+  }
+</style>
+</head>
+<body class="top-fixed">
+  <header class="ae-container-fluid ae-container-fluid--full rk-header ">
+    <input type="checkbox" id="mobile-menu" class="rk-mobile-menu">
+    <label for="mobile-menu">
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#bar"></use>
+      </svg>
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#bar"></use>
+      </svg>
+      <svg>
+        <use xlink:href="assets/img/symbols.svg#bar"></use>
+      </svg>
+    </label>
+    <div class="ae-container-fluid rk-topbar">
+      <h1 class="rk-logo"><a href="index.html">COVID19/AQuA<sup>tm</sup></a></h1>
+      <nav class="rk-navigation">
+        <ul class="rk-menu">
+          <li class="rk-menu__item"><a href="index.html" class="rk-menu__link" background >Home</a>
+          </li>
+          <li class="active rk-menu__item"><a href="portfolio.html" class="rk-menu__link">Pollution</a>
+          </li>
+        </ul>
+        <form class="rk-search">
+          <input type="text" placeholder="Search" id="urku-search" class="rk-search-field">
+          <label for="urku-search">
+            <svg>
+              <use xlink:href="assets/img/symbols.svg#icon-search"></use>
+            </svg>
+          </label>
+        </form>
+      </nav>
+    </div>
+  </header>
+  
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <center>
+<H2>
+  Welcome
+
+<small>To have a more accurate result, enter your zip code</small></H2>
+<input></input> <button class="bot">Search</button>
+<br>
+<br>
+
+<div id="map" class="map" ></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js" charset="utf-8"></script>
+<script src="https://maps.google.com/maps/api/js?key="></script>
+
+
+<script type="module">
+  import styles from './assets/styles.js'
+  const $map = document.querySelector('#map')
+  const map = new window.google.maps.Map($map,{
+    center:{
+      lat: 37.0882876,
+      lng: -95.8190721,
+    },
+    zoom: 6,
+    styles
+  })
+  renderData()
+  async function getData(){
+    const response = await fetch('https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/latest')
+    const data = await response.json()
+    return data
+  }
+
+  const popup = new window.google.maps.InfoWindow()
+  function renderExtraData({confirmed, deaths, recovered, provincestate, countryregion}){
+    return `
+    <div>
+      <p><strong> ${provincestate} - ${countryregion}</strong></p>
+      <p>confirmados:${confirmed}</p>
+      <p>muertes:${deaths}</p>
+      <p>recuperados:${recovered}</p>
+      </div>`
+  }
+  async function renderData() {
+    const data = await getData()
+    console.log(data)
+    data.forEach(item =>{
+      if (item.deaths > 0 ) {    
+      const marker = new window.google.maps.Marker({
+      position: {
+        lat: item.location.lat,
+        lng: item.location.lng,
+      },
+      map,
+      icon: 'assets/covid.png'
+    })
+    marker.addListener('click', ()=> {
+      popup.setContent(renderExtraData(item))
+      popup.open(map, marker )
+    })
+  }
+    })
+  }
+</script>
+
+</center>
+
+<app-root></app-root>
+<div class="">
+  <div class="" style="">
+      <iframe class="embed-responsive-item" src="assets/form/form.html" allowfullscreen style="width: 100%; min-height: 2000px; border: none; height: 100%;">
+      </iframe>
+      
+  </div>
+</div>
+<br>  
+ 
+</div>
+<script src="assets/js/svg4everybody.min.js"></script>
+    <script>svg4everybody();</script>
+
+</body>
+
+</html>

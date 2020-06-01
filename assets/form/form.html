@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+ 
+ 
+<script type="text/javascript" src="js/jquery-3.5.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/raphael-min.js"></script>
+<script type="text/javascript" src="js/kuma-gauge.jquery.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+ 
+ 
+<link rel="stylesheet" type="text/css" href="css/main-imss-gob-mx.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+ 
+ 
+ 
+<style type="text/css">
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+ 
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+   outline: 2px solid #6e1b5a;
+/*   background: url('img/peso/Seleccion_PESO_test.png'); */
+}
+</style>
+ 
+</head>
+ 
+<body>
+ 
+       <div class="text-center" style="width: 96%">
+             <div class="row">
+                    <div class="col-md-4 border-right ml-5">
+                           <div class="d-flex justify-content-start main-header-calculadora">
+                                  <div class="adjust-padding-ico-header">
+                                        <img src="img/ICO_Selecciona.svg" width="55px"
+                                               alt="selecciona factores">
+                                  </div>
+                                  <div
+                                        class="text-center calc-textcolor-green adjust-padding-top-header">
+                                        <h5>Select the factors you present</h5>
+                                  </div>
+                           </div>
+                           <div class="checkbox pt-4">
+                                  <div class="d-flex justify-content-start">
+                                        <div>
+                                               <img class="mr-3" src="img/ICO_Sexo.svg" width="30px" alt="sexo">
+                                        </div>
+                                        <div>
+                                               <p class="mb-0 calc-textcolor-green">
+                                                      <strong>Sex:</strong>
+                                               </p>
+                                        </div>
+                                  </div>
+                                  <div class="checkbox mt-0 ml-6">
+                                        <label class="pl-0"> <!-- <form:radiobutton path="chkSexo" value="1"
+                                    onchange='this.form.submit();' /> Mujer -->
+                                               <input type="radio" name="sexo" id="mujer" value="0" class="sexo">
+                                               Woman
+                                        </label> <label> <!-- <form:radiobutton path="chkSexo" value="2"
+                                    onchange='this.form.submit();' /> Hombre -->
+                                               <input type="radio" name="sexo" id="hombre" value="1"
+                                               class="sexo"> Man
+                                        </label>
+                                  </div>
+                           </div>
+                           <div class="d-flex justify-content-start pt-5">
+                                  <div>
+                                        <img class="mr-3" src="img/ICO_Edad.png" width="30px" alt="edad">
+                                  </div>
+                                  <div>
+                                        <p class="mb-0 calc-textcolor-green">
+                                               <strong>Age:</strong>
+                                        </p>
+                                  </div>
+                           </div>
+                           <div class="ml-6">
+<!--                                   <input class="form-control edad" id="txtEdad" onkeypress="return false";  -->
+<!--                                         placeholder="Ingresa tu edad" type="number" min="20" max="99"> -->
+                                      <select class="form-control edad" id="txtEdad"  >
+                                        <option value="0" selected="selected">Select your age</option>
+                                                                      <option value="20">13</option>
+                                                                      <option value="20">14</option>
+                                                                     <option value="20">15</option>
+                                                                      <option value="20">16</option>
+                                                                      <option value="20">17</option>
+                                                                      <option value="20">18</option>                             
+                                                                      <option value="20">19</option>
+                                                                     <option value="20">20</option>
+                                                                     <option value="21">21</option>
+                                                                     <option value="22">22</option>
+                                                                     <option value="23">23</option>
+                                                                     <option value="24">24</option>
+                                                                     <option value="25">25</option>
+                                                                     <option value="26">26</option>
+                                                                     <option value="27">27</option>
+                                                                     <option value="28">28</option>
+                                                                     <option value="29">29</option>
+                                                                     <option value="30">30</option>
+                                                                     <option value="31">31</option>
+                                                                     <option value="32">32</option>
+                                                                     <option value="33">33</option>
+                                                                     <option value="34">34</option>
+                                                                     <option value="35">35</option>
+                                                                     <option value="36">36</option>
+                                                                     <option value="37">37</option>
+                                                                     <option value="38">38</option>
+                                                                     <option value="39">39</option>
+                                                                     <option value="40">40</option>
+                                                                     <option value="41">41</option>
+                                                                     <option value="42">42</option>
+                                                                     <option value="43">43</option>
+                                                                     <option value="44">44</option>
+                                                                     <option value="45">45</option>
+                                                                     <option value="46">46</option>
+                                                                     <option value="47">47</option>
+                                                                     <option value="48">48</option>
+                                                                     <option value="49">49</option>
+                                                                     <option value="50">50</option>
+                                                                     <option value="51">51</option>
+                                                                     <option value="52">52</option>
+                                                                     <option value="53">53</option>
+                                                                     <option value="54">54</option>
+                                                                     <option value="55">55</option>
+                                                                     <option value="56">56</option>
+                                                                     <option value="57">57</option>
+                                                                     <option value="58">58</option>
+                                                                     <option value="59">59</option>
+                                                                     <option value="60">60</option>
+                                                                     <option value="61">61</option>
+                                                                     <option value="62">62</option>
+                                                                     <option value="63">63</option>
+                                                                     <option value="64">64</option>
+                                                                     <option value="65">65</option>
+                                                                     <option value="66">66</option>
+                                                                     <option value="67">67</option>
+                                                                     <option value="68">68</option>
+                                                                     <option value="69">69</option>
+                                                                     <option value="70">70</option>
+                                                                     <option value="71">71</option>
+                                                                     <option value="72">72</option>
+                                                                     <option value="73">73</option>
+                                                                     <option value="74">74</option>
+                                                                     <option value="75">75</option>
+                                                                     <option value="76">76</option>
+                                                                     <option value="77">77</option>
+                                                                     <option value="78">78</option>
+                                                                     <option value="79">79</option>
+                                                                     <option value="80">80</option>
+                                                                     <option value="81">81</option>
+                                                                     <option value="82">82</option>
+                                                                     <option value="83">83</option>
+                                                                     <option value="84">84</option>
+                                                                     <option value="85">85</option>
+                                                                     <option value="86">86</option>
+                                                                     <option value="87">87</option>
+                                                                     <option value="88">88</option>
+                                                                     <option value="89">89</option>
+                                                                     <option value="90">90</option>
+                                                                     <option value="91">91</option>
+                                                                     <option value="92">92</option>
+                                                                     <option value="93">93</option>
+                                                                     <option value="94">94</option>
+                                                                     <option value="95">95</option>
+                                                                     <option value="96">96</option>
+                                                                     <option value="97">97</option>
+                                                                     <option value="98">98</option>
+                                                                     <option value="99">99</option>
+                                                                     
+                                                              </select>
+                           </div>
+                          
+                           
+                           <div class="checkbox pt-4">
+                                  <div class="d-flex justify-content-start">
+                                        <div>
+                                               <img class="mr-3" src="img/ICO_Peso.png" width="30px" alt="sexo">
+                                        </div>
+                                        <div>
+                                               <p class="mb-0 calc-textcolor-green">
+                                                      <strong>Current weight situation:</strong>
+                                               </p>
+                                        </div>
+                                  </div>
+                                  <div class="row pl-1"  id="pesoSexo" style="padding-top: 10px;">
+<!--                                       <div class="col-xs-3 col-md-3"> -->
+                                                              <label class="pl-1 pr-1">
+                                               <input type="radio" name="peso" value="1" class="peso" style="width: 0; height: 0; position: absolute; opacity: 0; ">
+                                               <img src="img/peso/IMG_Bajo_Hombre.png" id="bajoPeso" style="display: none;" width="65" height="130"/>
+                                        </label>
+<!--                                                          </div> -->
+<!--                                                          <div class="col-xs-3 col-md-3"> -->
+                                        <label class="pl-1 pr-1">
+                                               <input type="radio" name="peso" value="2" class="peso" style="width: 0; height: 0; position: absolute; opacity: 0;">
+                                               <img src="img/peso/IMG_Normal_Hombre.png" id="normalPeso" style="display: none" width="65" height="130"/>
+                                        </label>
+<!--                                                          </div> -->
+<!--                                                          <div class="col-xs-3 col-md-3"> -->
+                                        <label class="pl-1 pr-1">
+                                               <input type="radio" name="peso" value="3" class="peso" style="width: 0; height: 0; position: absolute; opacity: 0; ">
+                                               <img src="img/peso/IMG_Sobre_Hombre.png" id="sobrePeso" style="display: none" width="65" height="130"/>
+                                        </label>
+<!--                                                          </div> -->
+<!--                                                          <div class="col-xs-3 col-md-3"> -->
+                                        <label class="pl-1 pr-1"> <input type="radio" name="peso"
+                                               value="4" class="peso" style="width: 0; height: 0; position: absolute; opacity: 0; ">
+                                               <img src="img/peso/IMG_Obes_Hombre.png" id="obesidadPeso" style="display: none" width="65" height="130"/>
+                                        </label>
+<!--                                                        </div> -->
+                                  </div>
+                           </div>
+                          
+                                       
+                                       
+                           
+                           
+                           
+                           <div class="d-flex justify-content-start pt-5">
+                                  <div>
+                                        <img class="mr-3" src="img/ICO_Padecimiento.svg" width="30px"
+                                               alt="padecimiento">
+                                  </div>
+                                  <div>
+                                        <p class="mb-0 calc-textcolor-green">
+                                               <strong>Ailments:</strong>
+                                        </p>
+                                  </div>
+                           </div>
+                           <div class="ml-6 text-left">
+<!--                                   <div class="checkbox"> -->
+<!--                                         <label>  -->
+<!--                                                <input type="checkbox" name="obesidad" id="padecimiento1" -->
+<!--                                                class="padecimiento" value="5"> Obesidad -->
+<!--                                         </label> -->
+<!--                                   </div> -->
+                                  <div class="checkbox">
+                                        <label> <!-- <form:checkbox path="chkHta"
+                                                            onchange='this.form.submit();' /> Hipertensión  -->
+                                               <input type="checkbox" name="hipertension" id="padecimiento2"
+                                               class="padecimiento" value="6"> Hypertension
+                                        </label>
+                                  </div>
+                                  <div class="checkbox">
+                                        <label> <!-- <form:checkbox path="chkDm"
+                                                            onchange='this.form.submit();' /> Diabetes -->
+                                               <input type="checkbox" name="diabetes" id="padecimiento3"
+                                               class="padecimiento" value="7"> Diabetes
+                                        </label>
+                                  </div>
+                                  <div class="checkbox">
+                                        <label> <!-- <form:checkbox path="chkFuma"
+                                                            onchange='this.form.submit();' /> Consumo de tabaco -->
+                                               <input type="checkbox" name="tabaco" id="padecimiento4"
+                                               class="padecimiento" value="8"> Tobacco use
+                                        </label>
+                                  </div>
+                                  <div class="checkbox">
+                                        <label> <!-- <form:checkbox path="chkEpoc"
+                                                            onchange='this.form.submit();' /> EPOC -->
+                                               <input type="checkbox" name="epoc" id="padecimiento5"
+                                               class="padecimiento" value="9"> Chronic Obstructive Pulmonary Disease (COPD)
+                                        </label>
+                                  </div>
+                                  <div class="checkbox">
+                                        <label> <!-- <form:checkbox path="chkCardio"
+                                                            onchange='this.form.submit();' /> Enfermedad Cardiovascular -->
+                                               <input type="checkbox" name="enfcard" id="padecimiento6"
+                                               class="padecimiento" value="10"> Cardiovascular Disease
+                                        </label>
+                                  </div>
+                                  <div class="checkbox">
+                                        <label> <!-- <form:checkbox path="chkInmuno"
+                                                            onchange='this.form.submit();' /> Inmunosupresión -->
+                                               <input type="checkbox" name="inmuno" id="padecimiento7"
+                                               class="padecimiento" value="11"> Immunosuppression (eg cancer, lupus, etc.)
+                                        </label>
+                                  </div>
+                           </div>
+                    </div>
+                    <div class="col-md-7">
+                           <div class="d-flex justify-content-start main-header-calculadora">
+                                  <div class="adjust-padding-ico-header">
+                                        <img src="img/ICO_Estimacion.svg" width="55px"
+                                               alt="Estimación de gravedad">
+                                  </div>
+                                  <div
+                                        class="text-center calc-textcolor-green adjust-padding-top-header">
+                                        <h5>Estimate of the severity of the disease due to possible contagion COVID-19</h5>
+                                  </div>
+                           </div>
+                           <br>
+                           <div class="row">
+                                  <div class="col-lg-5 col-md-5 col-xl-5 col-xs-12">
+                                        <div class="card mb-3">
+                                               <div class="card-header text-center adjust-border-bottom">
+                                                      <label>Risk factor's:</label>
+                                               </div>
+                                               <div
+                                                      class="card-body text-center calc-textcolor-green font-size-adjust-nfr adjust-min-height-card-body">
+                                                      <span id="nfr"></span>
+                                               </div>
+                                        </div>
+ 
+                                  </div>
+                                  <div class="col-lg-5 col-md-5 col-xl-5 col-xs-12">
+                                        <div class="card">
+                                               <div class="card-header text-center adjust-border-bottom">
+                                                      <label>Risk category: </label>
+                                               </div>
+                                               <div
+                                                      class="card-body text-center calc-textcolor-green adjust-min-height-card-body">
+                                                      <span id="cr"></span>
+                                               </div>
+                                        </div>
+                                  </div>
+                           </div>
+                           <div class="col-md-12 checkbox pb-3" style="width: 100%;"
+                                  align="center">
+                                  <div class="d-flex justify-content-start">
+                                        <div>
+                                               <img class="mr-3" src="img/ICO_Nivel.png" width="30px"
+                                                      alt="Nivel de riesgo">
+                                        </div>
+                                        <div>
+                                               <p class="mb-0 calc-textcolor-green">
+                                                     <strong>Risk level:</strong>
+                                               </p>
+                                        </div>
+                                  </div>
+                           </div>
+                           <div class="col-md-12 checkbox" style="width: 100%;" align="left">
+                                  <div id="col-md-12 checkbox">
+                                        <div id="divTbl">
+                                               <div id="content" class="js-gauge js-gauge--1 gauge"></div>
+                                        </div>
+                                  </div>
+                           </div>
+                           <div class="col-md-12 checkbox" style="width: 100%;" align="left">
+                                  <form class="form-inline" role="form"
+                                        style="padding: 0; margin: 0; border: 0;">
+                                        <div
+                                               class="checkbox border-left border-primary d-flex justify-content-start"
+                                               style="background-color: #00c853; height: 10px; width: 50%; float: left; vertical-align: top; margin-top: 0px;">
+                                        </div>
+                                        <div
+                                               class="checkbox border-left border-warning d-flex justify-content-start"
+                                               style="background-color: #E8B14D; height: 10px; width: 30%; float: left; vertical-align: top; margin-top: 0px;">
+                                        </div>
+                                        <div
+                                               class="checkbox border-left border-danger d-flex justify-content-start pl-2"
+                                               style="background-color: #D66767; height: 10px; width: 20%; float: left; vertical-align: top; margin-top: 0px;">
+                                        </div>
+                                  </form>
+                                  <form class="form-inline" role="form"
+                                        style="padding: 0; margin: 0; border: 0;">
+                                        <div
+                                               class="checkbox border-left border-primary d-flex justify-content-start"
+                                               style="width: 50%; vertical-align: top; margin-top: 0px; text-align: left;">
+                                               <label><img class="pl-2 pr-2" src="img/ICO_Medio_1.svg"
+                                                      width="22px" alt="Nivel medio"> Medium</label>
+                                        </div>
+                                        <div
+                                               class="checkbox border-left border-warning d-flex justify-content-start"
+                                               style="width: 30%; vertical-align: top; margin-top: 0px; text-align: left;">
+                                               <label><img class="pl-2 pr-2" src="img/ICO_Alto.svg"
+                                                      width="22px" alt="Nivel alto">High</label>
+                                        </div>
+                                        <div
+                                               class="checkbox border-left border-danger d-flex justify-content-start pl-2"
+                                               style="width: 20%; vertical-align: top; margin-top: 0px; text-align: left;">
+                                               <label><img class="pl-2 pr-2" src="img/ICO_MuyAlto.svg"
+                                                      width="22px" alt="Nivel muy alto">Very High </label>
+                                        </div>
+                                  </form>
+                           </div>
+                                        <div class="col-md-12 checkbox pb-3 pt-5" style="width: 100%;" align="center">
+                                               <div class="d-flex justify-content-center alert alert-info">
+                                                 <div class="pr-2 center-vertical">
+                                                      <img src="img/ICO_Sospechas.svg" width="35px">
+                                                 </div>
+                                                      <span>If you  <b>suspect</b> you have symptoms related to <b>CODIV-19</b>, answer the<a href="index.html" target="blank"> questionnaire</a> and follow the steps indicated. If you have any questions, call xxxxxxxxxx.</span>
+                                               </div>
+                         </div>
+                                        <div class="col-md-12 checkbox pb-5 pt-3" style="width: 100%;" align="center">
+                                               <div class="d-flex justify-content-center alert alert-warning">
+                                                 <div class="pr-2 center-vertical">
+                                                      <img src="img/ICO_Recomendaciones_alert.svg" width="35px">
+                                                 </div>
+                                                      <span>Know the recommendations to minimize the possibility of seriousness of your health condition, in case of COVID-19 infection according to the result of your risk level.</span>
+                                               </div>
+                         </div>
+                         <div class="colmd-12 ml-5">
+                            <div class="col-md-12 pt-4 pb-3" style="width: 100%;" align="center">
+                                   <div class="d-flex justify-content-start">
+                                          <div>
+                                                 <center>
+                                                <img class="mr-3" src="img/ICO_Recomendaciones.png" width="30px"
+                                                       alt="Recomendaciones">
+                                                 
+                                                  
+                                                  <br>
+        
+                                                <p class="text-left">
+                                                       <strong>Recommendations:</strong>
+                                                       
+                                                </p>
+                                                <div class="text-left">
+                                                  <a class=> Stay at home.</a>
+                                                         <br>
+                                                  <a> Cuida las porciones y se moderado.</a>
+                                                         <br>
+                                                  <a> Take care of the portions and be moderate.</a>
+                                                         <br>
+                                                  <a> Don't stop taking your blood pressure medications.</a>
+                                                  <br>
+                                                  <a>Measure your blood pressure every day.</a>
+                                                  <br>
+                                                  <a> Limit your intake of salt.</a>
+                                                  <br>
+                                                  <a> Practice relaxation techniques.</a>
+                                                  <br>
+                                                  <a> Continue taking your diabetes medications and / or insulin application.</a>
+                                                  <br>
+                                                  <a> Check your blood sugar daily with a fingertip.</a>
+                                                  <br>
+                                                  <a> Avoid smoking as much as possible, it is preferable NOT TO SMOKE.</a>
+                                                 </div> 
+                                          </div>
+                                    </div></div>
+                                   </div>
+                            </div></center>
+                            
+                
+ 
+                    </div>
+                    <br>
+             </div>
+             
+ 
+             <div id="rec" class="col-md-12 ml-5"></div>
+             </div>
+             <div id="dialog-message" title="Calculadora COVID-19"></div>
+       </div>
+       <script>
+       $( function() {
+           $( "#dialog-message" ).dialog({
+             modal: true,
+             autoOpen: false,
+             width:'auto',
+             position: { my: "center top", at: "center top", of: window },
+             buttons: {
+               Aceptar: function() {
+                 $( this ).dialog( "close" );
+               }
+             }
+           });
+           $("#dialog-message").dialog("widget")            // get the dialog widget element
+           .find(".ui-dialog-titlebar-close") // find the close button for this dialog
+           .hide();
+         } );
+    
+       
+             var factores;
+             var request;
+             var factorSexo = 0.0;
+             var factorEdad = 0.0;
+             var factorObesidad = 0.0;
+             var factorHiper = 0.0;
+             var factorDiabetes = 0.0;
+             var factorTabaco = 0.0;
+             var factorEpoc = 0.0;
+             var factorCv = 0.0;
+             var factorInmuno = 0.0;
+             var sumatoria = 0.0;
+             var numeroFactoresRiesgos = 0;
+             var edadSeleccionada=0;
+             var pesoSeleccionado=0;
+ 
+             $(".sexo").click(function() {
+             if ($(this).val() == 1) {
+                     $("#bajoPeso").attr('src','img/peso/ICO_H_Bajo.png');
+                     $("#normalPeso").attr('src','img/peso/ICO_H_Normal.png');
+                     $("#sobrePeso").attr('src','img/peso/ICO_H_Sobre.png');
+                     $("#obesidadPeso").attr('src','img/peso/ICO_H_Obes.png');
+                   } else {
+                     $("#bajoPeso").attr('src','img/peso/ICO_M_Bajo.png');
+                            $("#normalPeso").attr('src','img/peso/ICO_M_Normal.png');
+                            $("#sobrePeso").attr('src','img/peso/ICO_M_Sobre.png');
+                            $("#obesidadPeso").attr('src','img/peso/ICO_M_Obes.png');
+                   }
+             $("#bajoPeso").show();
+             $("#normalPeso").show();
+              $("#sobrePeso").show();
+             $("#obesidadPeso").show();
+             armarJson();
+             });
+             $(".edad").change(function() {
+                    if (!$('#mujer').is(':checked') && !$('#hombre').is(':checked')) {
+//                            alert('Por favor seleccione el sexo.');
+                                           $('#dialog-message').html('<p>Por favor selecciona el sexo.</p>');
+                                           $('#dialog-message').dialog('open');
+                           $("#txtEdad").val($("#txtEdad option:first").val());
+                    } else {
+                             edadSeleccionada =  $( "#txtEdad option:selected" ).val();
+                             console.log("Edad seleccionada: "+edadSeleccionada);
+                           armarJson();
+                    }
+             });
+            
+             $(".peso").click(function(){
+             if (!$('#mujer').is(':checked') && !$('#hombre').is(':checked')) {
+                       $('#dialog-message').html('<p>Por favor selecciona el sexo.</p>');
+                                     $('#dialog-message').dialog('open');
+                                         $(this).prop('checked', false);
+                                         pesoSeleccionado=0;
+                               } else if(edadSeleccionada == 0) {
+                                    $('#dialog-message').html('<p>Por favor selecciona la edad.</p>');
+                       $('#dialog-message').dialog('open');
+                       $(this).prop('checked', false);
+                               }else{
+                                    console.log('Valor del peso:'+$(this).val());
+                                    pesoSeleccionado = $(this).val();
+                                    armarJson();
+                               }
+             });
+            
+             
+             $(".padecimiento").click(function() {
+                    if (!$('#mujer').is(':checked') && !$('#hombre').is(':checked')) {
+//                            alert('Por favor seleccione el sexo.');
+                                           $('#dialog-message').html('<p>Por favor selecciona el sexo.</p>');
+                                           $('#dialog-message').dialog('open');
+                           $(this).prop('checked', false);
+                    } else if(edadSeleccionada == 0 ){
+                       $('#dialog-message').html('<p>Por favor selecciona la edad.</p>');
+                       $('#dialog-message').dialog('open');
+                       $(this).prop('checked', false);
+                    }else if(pesoSeleccionado==0){
+                       $('#dialog-message').html('<p>Por favor selecciona el peso.</p>');
+                           $('#dialog-message').dialog('open');
+                           $(this).prop('checked', false);
+                    }else{
+                           armarJson();
+                    }
+             });
+ 
+             function armarJson() {
+                   numeroFactoresRiesgos = 0;
+ 
+                    $.getJSON("js/factores.json", function(data) {
+                           console.log('Funciono factorers JSON');
+                           console.log(data);
+ 
+                          
+                           if ($('input[id="hombre"]:checked').val() == 1) {
+                             console.log('Es hombre....');
+                                $.each(data.sexo, function(index, value) {
+                                        console.log('index: '+ index);
+                                        console.log('value.valor: '+ value.valor);
+                                        console.log('value.valor: '+ value.factor);
+                                        numeroFactoresRiesgos++;
+                                        factorSexo = parseFloat(Math.log(parseFloat(value.factor)));
+                                  });
+                           } else {
+                                  factorSexo = 0.0;
+                           }
+                           console.log('factorSexo despues de: '+factorSexo);
+                          
+                           
+                           if (edadSeleccionada !=0 ) {
+                             console.log('Calculando factor edad...');
+                            
+                             if ($('input[id="hombre"]:checked').val() == 1) {
+                                    console.log('Es hombre....');
+                                    if (edadSeleccionada > 45 ) {
+                                           numeroFactoresRiesgos++;
+                                    }                              
+                               } else {
+                                    if (edadSeleccionada > 53 ) {
+                                           numeroFactoresRiesgos++;
+                                    }
+                               }
+                            
+                                   $.each(data.edad, function(index, value) {
+                                        console.log('calculando - index: '+ index);
+                                        console.log('edadSeleccionada: '+ edadSeleccionada);
+                                        console.log('factor - valor: '+ value.factor);                                          
+                                        
+                                        //edad por ratio = resultado
+                                        //factor edad = logaritmo natural de (edadseleccionada * ratio)
+//                                             var factor= parseFloat(edadSeleccionada) * parseFloat(value.factor);
+//                                         factorEdad = parseFloat(Math.log(factor));
+                                       
+                                        //Formula de excel - - - -
+                                        //factor edad =  logaritmo natural del ratio * edadseleccionada
+                                        var logaNat = Math.log(parseFloat(value.factor));
+                                        factorEdad =  parseFloat(edadSeleccionada) * parseFloat(logaNat);
+                                  });
+                                console.log('factorEdad: '+ factorEdad);
+                           }
+                           else {
+                             factorEdad = 0.0;
+                           }
+                          
+                           
+                           //Logica para el peso - INICIO
+                           if( pesoSeleccionado!=0 )
+                              {
+                                    if( pesoSeleccionado==3 || pesoSeleccionado==4 )
+                                          {
+                                                  $.each(data.obesidad, function(index, value) {
+                                                        numeroFactoresRiesgos++;
+                                                        factorObesidad = parseFloat(Math.log(parseFloat(value.factor)));
+                                                  });
+                                          }else
+                                          {
+                                               factorObesidad = 0.0;
+                                          }
+                              }else{
+                                               factorObesidad = 0.0;
+                           }
+                                               //Logica para el peso - FIN
+ 
+//                            if ($('input[id="padecimiento1"]:checked').val() == 5) {
+//                                   $.each(data.obesidad, function(index, value) {
+//                                         numeroFactoresRiesgos++;
+//                                         factorObesidad = parseFloat(Math.log(parseFloat(value.factor)));
+//                                   });
+//                            } else {
+//                                   factorObesidad = 0.0;
+//                            }
+ 
+                           if ($('input[id="padecimiento2"]:checked').val() == 6) {
+                                  $.each(data.hipertension, function(index, value) {
+                                        numeroFactoresRiesgos++;
+                                        factorHiper = parseFloat(Math.log(parseFloat(value.factor)));
+                                  });
+                           } else {
+                                  factorHiper = 0.0;
+                           }
+ 
+                           if ($('input[id="padecimiento3"]:checked').val() == 7) {
+                                  $.each(data.diabates, function(index, value) {
+                                        numeroFactoresRiesgos++;
+                                        factorDiabetes = parseFloat(Math.log(parseFloat(value.factor)));
+                                  });
+                           } else {
+                                  factorDiabetes = 0.0;
+                           }
+ 
+                           if ($('input[id="padecimiento4"]:checked').val() == 8) {
+                                  $.each(data.tabaco, function(index, value) {
+                                        numeroFactoresRiesgos++;
+                                        factorTabaco = parseFloat(Math.log(parseFloat(value.factor)));
+                                  });
+                           } else {
+                                  factorTabaco = 0.0;
+                           }
+ 
+                           if ($('input[id="padecimiento5"]:checked').val() == 9) {
+                                  $.each(data.epoc, function(index, value) {
+                                        numeroFactoresRiesgos++;
+                                        factorEpoc = parseFloat(Math.log(parseFloat(value.factor)));
+                                  });
+                           } else {
+                                  factorEpoc = 0.0;
+                           }
+ 
+                           if ($('input[id="padecimiento6"]:checked').val() == 10) {
+                                  $.each(data.cardio, function(index, value) {
+                                       numeroFactoresRiesgos++;
+                                        factorCv = parseFloat(Math.log(parseFloat(value.factor)));
+                                  });
+                           } else {
+                                  factorCv = 0.0;
+                           }
+ 
+                           if ($('input[id="padecimiento7"]:checked').val() == 11) {
+                                  $.each(data.inmuno, function(index, value) {
+                                        numeroFactoresRiesgos++;
+                                        factorInmuno = parseFloat(Math.log(parseFloat(value.factor)));
+                                  });
+                           } else {
+                                  factorInmuno = 0.0;
+                           }
+                                 
+                        servicio();
+                    });
+                    console.log('Llamando servicio desde genera armaJson()');
+             }
+ 
+             function servicio() {
+                    var sumaTotalFactores = 0.0;
+                    var porMenosUno;
+                    var exponencial;
+                    var exponencialMasUno;
+                    var divididoEntreUno;
+                    var porCien;
+                    var probabilidad;
+                    var categoriaRiesgo;
+                    var fuente;
+                                               
+                    console.log('factorSexo servicio: '+factorSexo);
+                    console.log('factor edad servicio: '+factorEdad);
+                    console.log('factorObesidad servicio: '+factorObesidad);
+                    //Math.log(0.1993047)
+                    sumaTotalFactores = Math.log(0.0238616) + factorSexo + factorEdad
+                                  + factorObesidad + factorHiper + factorDiabetes
+                                  + factorTabaco + factorEpoc + factorCv + factorInmuno;
+                    sumaTotalFactores = parseFloat(sumaTotalFactores);
+ 
+                    console.log("Sumatoria: " + (sumaTotalFactores));
+                    porMenosUno = parseFloat((-1) * (sumaTotalFactores));
+                    console.log("porMenosUno: " + porMenosUno);
+                    exponencial = parseFloat(Math.exp(porMenosUno));
+                    console.log("exponencial: " + exponencial);
+                    exponencialMasUno = parseFloat(1 + exponencial);
+                    console.log("exponencialMasUno: " + exponencialMasUno);
+                    divididoEntreUno = parseFloat(1 / exponencialMasUno);
+                    console.log("divididoEntreUno: " + divididoEntreUno);
+                    porCien = parseFloat(divididoEntreUno * 100);
+                    console.log("porCien: " + porCien);
+ 
+                    var rounded = Math.round(porCien * 10) / 10;
+                    probabilidad = parseFloat(rounded);
+                    console.log("probabilidad: " + probabilidad);
+                    console.log("numeroFactoresRiesgo: " + numeroFactoresRiesgos);
+                    var rounded = Math.round(probabilidad * 10) / 10;
+ 
+                    largo = probabilidad;
+                    if (probabilidad < 50) {
+                           fuente = "m.json";
+                           color = "#6395ED";
+                           categoriaRiesgo = "Riesgo medio para cuadro grave COVID-19";
+                    } else if (probabilidad >= 50 && probabilidad < 80) {
+                           fuente = "a.json";
+                           color = "#E8B14D";
+                           categoriaRiesgo = "Riesgo alto para cuadro grave COVID-19";
+                    } else {
+                           fuente = "ma.json";
+                           color = "#D66767";
+                           categoriaRiesgo = "Riesgo muy alto para cuadro grave COVID-19";
+                    }
+ 
+                    $("#nfr").html(' <h4><b>' + numeroFactoresRiesgos + '</b></h4>');
+                    $("#prob").html(' <b>' + probabilidad + '%</b>');
+                    $("#cr").html(' <b>' + categoriaRiesgo + '</b>');
+                    // hacerGrafica(probabilidad);
+                    var color;
+                    var largo;
+ 
+                    //$("#divTbl").css("background-color", color);
+                    //$("#divTbl").css("color","white");
+                    $("#divTbl").css("display", "flex");
+                    $("#divTbl").css("justify-content", "center");
+                    $("#divTbl").css("align-items", "center");
+                    $('.js-gauge--1').css("color", "green");
+                    //$('.js-gauge--1').css("justify-content","rigth");
+                    //$('.js-gauge--1').css("align-items","center");
+                    //$("#divTbl").html("<h5>"+largo + "%</h5>");
+                    //$("#divTbl").width(largo + "%");
+                    $('.js-gauge--1').kumaGauge({
+                           value : largo,
+                           radius : 150,
+                           gaugeWidth : 60,
+                           label : {
+                                  display : false
+                           },
+                           valueLabel : {
+                                  display : true,
+                                  fontFamily : 'Montserrat',
+                                  fontColor : '#000',
+                                  fontSize : '20',
+                                  fontWeight : 'normal'
+                           }
+                    });
+                    $('.js-gauge--1').kumaGauge('update', {
+                           value : largo
+                    });
+ 
+                    //$("#content").html(largo+'%');
+ 
+                    var textoRec = "";
+                    var textoRecD = "";
+                    $.getJSON("js/" + fuente,function(data) {
+                            console.log('Funciono');
+                            console.log(data.recomendaciones);
+                            textoRec = '<div>';
+                            $.each(data.recomendaciones, function(index,value) {
+                            console.log(value.mensaje);
+                                   if (index == 0) {
+                                          textoRecD += '<li><strong>'+ value.mensaje + '</strong></li>';
+                                   } else {
+                            textoRecD += '<li>' + value.mensaje + '</li>';}
+                            });
+                            textoRec += '<div><ul>' + textoRecD + '</ul></div>';
+                                                      /*
+                                                      + factorTabaco
+                                                      + factorEpoc
+                                                      + factorCv
+                                                      + factorInmuno;*/
+ 
+                            if (factorObesidad > 0.0) {
+                                   textoRecD = "";
+                                   $.each(data.obesidad,function(index, value) {
+                                   console.log('Recomendaciones de obesidad');
+                                   textoRecD += '<li>'+ value.mensaje + '</li>';});
+                                   textoRec += '<div><h6>Obesidad</h6><ul>'+ textoRecD + '</ul></div>';}
+                                          if (factorHiper > 0.0) {
+                                                 textoRecD = "";
+                                                 $.each(data.hipertension,function(index, value) {
+                                                 console.log('Recomendaciones de hipertension');
+                                                 textoRecD += '<li>'+ value.mensaje + '</li>';});
+                                                 textoRec += '<div><h6>Hipertensión</h6><ul>'+ textoRecD + '</ul></div>';
+                                                      }
+                                          if (factorDiabetes > 0.0) { textoRecD = "";
+                                                 $.each(data.diabates,function(index, value) {
+                                                 console.log('Recomendaciones de diabates');
+                                                 textoRecD += '<li>' + value.mensaje+ '</li>'; });
+                                                 textoRec += '<div><h6>Diabetes</h6><ul>'+ textoRecD + '</ul></div>';}
+                                          if (factorTabaco > 0.0) {
+                                                 textoRecD = "";
+                                                 $.each(data.tabaco,function(index, value) {
+                                                 console.log('Recomendaciones de tabaco');
+                                                 textoRecD += '<li>'+ value.mensaje+ '</li>';});
+                                                 textoRec += '<div><h6>Consumo de tabaco</h6><ul>'+ textoRecD + '</ul></div>';}
+                                          if (factorEpoc > 0.0) {
+                                                 textoRecD = "";
+                                                 $.each(data.epoc, function(index, value) {
+                                                 console.log('EPOC');
+                                                 textoRecD += '<li>' + value.mensaje + '</li>';});
+                                                 textoRec += '<div><h6>Enfermedad Pulmonar Obstructiva Crónica (EPOC)</h6><ul>'+ textoRecD + '</ul></div>';}
+                                          if (factorCv > 0.0) {
+                                                 textoRecD = "";
+                                                 console.log("factorHiper: " + factorHiper);
+                                                 $.each(data.cardio,function(index, value) {
+                                                 console.log('Recomendaciones de cardio');
+                                          //console.log('index: '+index +' - value:'+ value.mensaje );
+                                          if (index == 1) {
+                                                 if (!factorHiper > 0.0) {
+                                                        textoRecD += '<li>'+ value.mensaje+ '</li>';}
+                                                 } else {
+                                                        textoRecD += '<li>'+ value.mensaje+ '</li>';}
+                                                        });
+                                                 textoRec += '<div><h6>Enfermedad Cardiovascular</h6><ul>'+ textoRecD + '</ul></div>';}
+                                                 if (factorInmuno > 0.0) {
+                                                        textoRecD = "";
+                                                        $.each(
+                                                        data.inmuno,
+                                                        function(index, value) {
+                                                        console.log('Recomendaciones de inmuno');
+                                                        textoRecD += '<li>'+ value.mensaje+ '</li>';});
+                                                        textoRec += '<div><h6>Inmunosupresión</h6><ul>'+ textoRecD + '</ul></div>';}
+                                                   if ( edadSeleccionada >= 60 ) {
+                                                        textoRecD = "";
+                                                        $.each(
+                                                        data.masSesenta,
+                                                        function(index, value) {
+                                                        console.log('Recomendaciones de más de 60 años');
+                                                        textoRecD += '<li>'+ value.mensaje+ '</li>';
+                                                        });
+                                                        textoRec += '<div><h6>60 a&ntilde;os o m&aacute;s</h6><ul>'+ textoRecD + '</ul></div>';}
+                                                        textoRecD = "";
+                                                        $.each(data.generales, function(index, value) {
+                                                        console.log('Recomendaciones generales');
+                                                        textoRecD += '<li>' + value.mensaje+ '</li>';
+                                                        });
+                                                        textoRec += '<div><h6>Generales</h6><ul>'+ textoRecD + '</ul></div>';
+                                                        textoRec += '</div>';
+                                                        console.log(textoRec);
+                                                        $("#rec").width("100%");
+                                                        //$("#rec").css("background-color",color);
+                                                        //$("#rec").css("color", "white");
+                                                        $("#rec").html(textoRec);
+                                               });
+             }
+       </script>
+<script async type="text/javascript" src="https://covid-calculadora.imss.gob.mx/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1507922059></script>
+</body>
+</html>
+ 

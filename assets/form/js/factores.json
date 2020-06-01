@@ -1,0 +1,109 @@
+{
+    
+    "recomendaciones":
+    [
+        {
+            "mensaje":"QU&Eacute;DATE EN CASA."
+        }
+       
+    ],
+    "obesidad": [
+        {
+            "mensaje":"Cuida las porciones y se moderado."
+        },
+        {
+            "mensaje":"Mantenerte en un peso adecuado trae muchos beneficios para tu salud y bienestar integral."
+        }
+    ],
+    "hipertension":[
+        {
+            "mensaje":"No dejes de tomar tus medicamentos para la presi&oacute;n arterial."
+        },
+        {
+            "mensaje":"Mide tu presi&oacute;n arterial todos los d&iacute;as."
+        },
+        {
+            "mensaje":"Limita la ingesta de sal."
+        },
+        {
+            "mensaje":"Practica t&eacute;cnicas de relajaci&oacute;n."
+        }        
+    ],
+    "diabates":[
+        {
+           "mensaje":"Contin&uacute;a tomando tus medicamentos para la diabetes y/o aplicaci&oacute;n de insulina."
+        },
+        {
+            "mensaje":"Revisa diariamente tu nivel de az&uacute;car con la punci&oacute;n del dedo."
+        }
+    ],
+    "tabaco":[
+        {
+            "mensaje":"Evita en lo posible fumar, es preferible NO FUMAR."
+        },
+        {
+            "mensaje":"Evita el uso de vapeadores o cigarros electr&oacute;nicos."
+        }
+    ],
+    "epoc":[
+        {
+            "mensaje":"Contin&uacute;a tomando los medicamentos recetados por tu m&eacute;dico para controlar tu enfermedad pulmonar."
+        },
+        {
+            "mensaje":"Evita sofocarte, realizar ejercicios vigorosos y exponerte a aquello que te genera alergia."
+        }
+    ],
+    "cardio":[
+        {
+            "mensaje":"Contin&uacute;a tomando tus medicamentos para el coraz&oacute;n de acuerdo con las indicaciones m&eacute;dicas."
+        },
+        {
+            "mensaje":"Limita la ingesta de sal."
+        },
+        {
+            "mensaje":"Procura mantenerte relajado."
+        }
+    ],
+    "inmuno":[
+        {
+            "mensaje":"Contin&uacute;a tomando tus medicamentos para tu padecimiento de acuerdo con las indicaciones m&eacute;dicas."
+        }
+    ],
+    "masSesenta":[
+        {
+            "mensaje":"Si tomas alg&uacute;n medicamento por orden m&eacute;dica, no dejes de hacerlo."
+        }
+    ],
+    "generales":[
+        {
+            "mensaje":"Lava frecuentemente tus manos con agua y jab&oacute;n o usa gel antibacterial con base 70% de alcohol."
+        },
+        {
+            "mensaje":"Respeta las medidas de la sana distancia."
+        },
+        {
+            "mensaje":"Tose o estornuda en la parte interna de tu codo (estornudo de etiqueta)."
+        },
+        {
+            "mensaje":"Si necesitas escupir, hazlo en un pa&ntilde;uelo desechable y t&iacute;ralo en un bote de basura cerrado."
+        },
+        {
+            "mensaje":"Evita tocarte la cara, nariz, boca y ojos con las manos sucias."
+        },
+        {
+            "mensaje":"Si es necesario salir, mant&eacute;n la sana distancia y usa cubrebocas en espacios cerrados y concurridos."
+        },
+        {
+            "mensaje":"Alim&eacute;ntate saludablemente."
+        },
+        {
+            "mensaje":"Practica actividad f&iacute;sica diariamente acorde a tu edad y condici&oacute;n de salud."
+        },
+        {
+            "mensaje":"Procura un descanso adecuado y un sue&ntilde;o recuperador."
+        },
+        {
+            "mensaje":"T&uacute; te conoces mejor que nadie. Ante cualquier malestar inusual, llama al 800 222 26 68 y pide orientaci&oacute;n."
+        }
+    ]    
+}

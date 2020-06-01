@@ -1,0 +1,62 @@
+<div class="flex">
+    <div class="flex-item col-md-5">
+      <div style="display: block;">
+      <canvas baseChart width="400" height="400"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  [plugins]="lineChartPlugins"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+    <br>
+    <div class="flex-item" >
+      <table class="table table-responsive table-condensed">
+        <tr>
+          <th *ngFor="let label of lineChartLabels">{{label}}</th>
+        </tr>
+        <tr *ngFor="let d of lineChartData; let i=index" [class]="'line-'+i">
+          <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
+        </tr>
+      </table>
+      <p>The data is extracted from WHO data base on January 26th, 2017 			
+      </p>
+      <style type="text/css">
+        table.tableizer-table {
+          font-size: 12px;
+          border: 1px solid #CCC; 
+          font-family: Georgia, serif;
+        } 
+        .tableizer-table td {
+          padding: 4px;
+          margin: 3px;
+          border: 1px solid #CCC;
+        }
+        .tableizer-table th {
+          background-color: #1874CF; 
+          color: #FFF;
+          font-weight: bold;
+        }
+      </style>
+      <table class="tableizer-table">
+      <thead><tr class="tableizer-firstrow"><th>Longitude</th><th>Latitude</th><th>Country</th><th>PM2.5</th></tr></thead><tbody>
+       <tr><td>-115.55</td><td>32.65</td><td>MEX</td><td>30.229315</td></tr>
+       <tr><td>-115.45</td><td>32.65</td><td>MEX</td><td>25.795176</td></tr>
+       <tr><td>-115.35</td><td>32.65</td><td>MEX</td><td>17.869684</td></tr>
+       <tr><td>-115.25</td><td>32.65</td><td>MEX</td><td>16.955835</td></tr>
+       <tr><td>-115.15</td><td>32.65</td><td>MEX</td><td>17.221494</td></tr>
+       <tr><td>-115.05</td><td>32.65</td><td>MEX</td><td>17.459969</td></tr>
+      </tbody></table>
+      <button class="btn btn-primary" (click)="randomize()">CO</button> &nbsp;
+      <!--<button class="btn btn-primary" (click)="pushOne()">NO</button> &nbsp;-->
+      <!--<button class="btn btn-primary" (click)="changeColor()">SO2</button>&nbsp;-->
+      <!--<button class="btn btn-primary" (click)="hideOne()">PM</button> &nbsp;-->
+      <!--<button class="btn btn-primary" (click)="changeLabel()">O3</button> &nbsp;-->
+
+    </div>
+    <br>
+  </div>
